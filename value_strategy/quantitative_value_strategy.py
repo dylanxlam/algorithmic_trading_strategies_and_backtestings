@@ -7,7 +7,7 @@ import math
 from statistics import mean
 
 # Import API token from a separate module (secret.py)
-from secret import IEX_CLOUD_API_TOKEN
+from value_strategy.secret import IEX_CLOUD_API_TOKEN
 
 def chunks(lst, n):
     """Yield successive n-sized chunks from lst."""

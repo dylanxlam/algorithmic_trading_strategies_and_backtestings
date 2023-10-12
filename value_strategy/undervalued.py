@@ -15,8 +15,15 @@ def get_most_undervalued_stock():
         for i in range(0, len(lst), n):
             yield lst[i:i + n]
 
-    # Load the list of S&P 500 stocks from a CSV file
-    stocks = pd.read_csv('sp_500_stocks.csv')
+    # Open the file for reading
+    with open('tickers.py', 'r') as file:
+    # Read the file content
+        stocks = file.read()
+
+# Now, the variable 'tickers' contains the content of the file
+# You may want to split it into a list of tickers
+    stocks = stocks.split(',')
+
 
     # Split the list of stock symbols into groups of 100 symbols
     symbol_groups = list(chunks(stocks['Ticker'], 100))
@@ -164,5 +171,4 @@ def get_most_undervalued_stock():
     return ticker
 
 
-if __name__ == '__main__':
-    main()
+get_most_undervalued_stock()
