@@ -1,4 +1,4 @@
-def get_most_undervalued_stock():
+def get_most_undervalued_stocks():
 
     import numpy as np
     import pandas as pd
@@ -153,7 +153,7 @@ def get_most_undervalued_stock():
     rv_dataframe.sort_values('RV Score', ascending=True, inplace=True)
 
     # Select the top 50 rows (stocks) with the lowest RV Scores
-    rv_dataframe = rv_dataframe[:50]
+    rv_dataframe = rv_dataframe[:10]
 
     # Reset the index of the DataFrame to start from 0 and drop the old index
     rv_dataframe.reset_index(drop=True, inplace=True)
@@ -171,4 +171,4 @@ def get_most_undervalued_stock():
     return ticker
 
 
-get_most_undervalued_stock()
+get_most_undervalued_stocks()
